@@ -1,6 +1,7 @@
 var equation = document.getElementById('equation');
 var result = document.getElementById('result');
-var onStatus = document.getElementById('onOffButton');;
+var onStatus = document.getElementById('onOffButton');
+var lastOp = false;
 
 function on(){
     if(onStatus.innerText == "ON"){
@@ -24,8 +25,12 @@ function ac(){
 
 function add(ch){
     if(onStatus.innerText == "OFF"){
-        if(equation.value == "_"){ 
+        if(ch == 'ANS'){
+            ch = result.value;
+        }
+        if(equation.value == "_" || lastOp){
             equation.value = ch;
+            lastOp = false;
         }
         else{
             equation.value += ch;
@@ -35,6 +40,7 @@ function add(ch){
 
 function del(){
     if(onStatus.innerText == "OFF" && equation.value != '_'){
+        lastOp = false;
         if(equation.value.length == 1){
             equation.value = "_";
         }
@@ -42,4 +48,10 @@ function del(){
             equation.value = equation.value.substring(0,equation.value.length - 1);
         }
     }
+}
+
+function calculate(){
+    equation.value.replace('X','*');
+    result.value = eval(equation.value);
+    lastOp = true;
 }
