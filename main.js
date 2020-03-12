@@ -33,3 +33,13 @@ function add(ch){
     }
 }
 
+function del(){
+    if(onStatus.innerText == "OFF" && equation.value != '_'){
+        if(equation.value.length == 1){
+            equation.value = "_";
+        }
+        else{
+            equation.value = equation.value.substring(0,equation.value.length - 1);
+        }
+    }
+}
