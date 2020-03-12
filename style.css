@@ -17,12 +17,20 @@
     text-align: center;
 }
 
-input.scrn {
-    text-align: center;
+input.scrn , input.equation {
     padding: 10px;
     width: 300px;
-    height: 40px;
+    height: 20px;
     background-color: #d1d1e0;
+    border: none;
+}
+
+input.equation {
+    text-align: left;
+}
+
+input.scrn {
+    text-align: right;
 }
 
 .buttons {

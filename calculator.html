@@ -7,45 +7,49 @@
     <body>
         <div class="outer">
             <div class="innerScreen">
-                <input type="text" class="scrn" size="number">
+                <input type="text" class="equation" size="number" id="equation">
+                <input type="text" class="scrn" size="number" id="result">
             </div>
             <div class="buttons">
                 <div>
                     <button>up</button>
                     <button>down</button>
                     <button>ANS</button>
-                    <button>AC</button>
-                    <button>ON/OFF</button>
+                    <button onclick="ac()">AC</button>
+                    <button onclick="on()" id="onOffButton">ON</button>
                 </div>
                 <div>
-                    <button>7</button>
-                    <button>8</button>
-                    <button>9</button>
+                    <button onclick="add(7)">7</button>
+                    <button onclick="add(8)">8</button>
+                    <button onclick="add(9)">9</button>
                     <button>DEL</button>
                     <button>C</button>
                 </div>
                 <div>
-                    <button>4</button>
-                    <button>5</button>
-                    <button>6</button>
-                    <button>*</button>
-                    <button>/</button>
+                    <button onclick="add(4)">4</button>
+                    <button onclick="add(5)">5</button>
+                    <button onclick="add(6)">6</button>
+                    <button onclick="add('X')">*</button>
+                    <button onclick="add('/')">/</button>
                 </div>
                 <div>
-                    <button>1</button>
-                    <button>2</button>
-                    <button>3</button>
-                    <button>+</button>
-                    <button>-</button>
+                    <button onclick="add(1)">1</button>
+                    <button onclick="add(2)">2</button>
+                    <button onclick="add(3)">3</button>
+                    <button onclick="add('+')">+</button>
+                    <button onclick="add('-')">-</button>
                 </div>
                 <div>
-                    <button>0</button>
-                    <button>.</button>
-                    <button>(</button>
-                    <button>)</button>
+                    <button onclick="add(0)">0</button>
+                    <button onclick="add('.')">.</button>
+                    <button onclick="add('(')">(</button>
+                    <button onclick="add(')')">)</button>
                     <button>=</button>
                 </div>
             </div>
         </div>
+
+
+        <script type="text/javascript" src="main.js"></script>
     </body>
 </html>
