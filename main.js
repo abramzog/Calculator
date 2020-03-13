@@ -51,7 +51,7 @@ function del(){
 }
 
 function calculate(){
-    equation.value.replace('X','*');
-    result.value = eval(equation.value);
+    
+    result.value = eval(equation.value.replace('X','*'));
     lastOp = true;
 }
